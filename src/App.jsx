@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, BrowserRouter, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./context/UserContext";
 import BusLine from "./pages/BusLine";
 import Home from './pages/Home';

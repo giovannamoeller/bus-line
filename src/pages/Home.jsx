@@ -3,12 +3,12 @@ import { Button } from "../components/Button";
 import Header from "../components/Header";
 import { Input } from "../components/Input";
 import { Container } from "../components/Container";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 function Home() {
 
-    const {isLoggedIn, setIsLoggedIn} = useContext(UserContext)
+    const {setIsLoggedIn} = useContext(UserContext)
 
     function login() {
         setIsLoggedIn(true);
@@ -19,7 +19,7 @@ function Home() {
     }
 
     const navigate = useNavigate();
-    
+
     function goToSelectLinePage() {
         login()
         navigate('/busLine')
