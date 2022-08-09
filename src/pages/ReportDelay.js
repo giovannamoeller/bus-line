@@ -3,16 +3,25 @@ import { Button } from "../components/Button";
 import Header from "../components/Header";
 import { Input } from "../components/Input";
 import { Container } from "../components/Container";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { busLines } from "../data/busLines";
+import { UserContext } from "../context/UserContext";
 
 function ReportDelay() {
+
     const navigate = useNavigate();
+
+    const { isLoggedIn } = useContext(UserContext)
+
     const [isLoading, setIsLoading] = useState(false);
     const [address, setAddress] = useState();
     const [error, setError] = useState(false)
     const { id } = useParams();
     const busLine = busLines.find(line => ( line.value === Number(id) ));
+
+    function tryAgain() {
+        navigate('/')
+    }
 
     function sendDelay() {
         alert('Atraso reportado com sucesso!')
@@ -36,12 +45,17 @@ function ReportDelay() {
     }
 
     useEffect(() => {
-        if (navigator.geolocation) {
-            setIsLoading(true)
-            setError(false)
-            getLocation()
-        } else { 
-            setError(true)
+        if (isLoggedIn) {
+            if (navigator.geolocation) {
+                setIsLoading(true)
+                setError(false)
+                getLocation()
+            } else { 
+                setError(true)
+            }
+        } else {
+            renderErrorNotLoggedIn();
+            return;
         }
     }, []);
 
@@ -64,15 +78,36 @@ function ReportDelay() {
         )
     }
 
+    function renderErrorNotLoggedIn() {
+        return (
+            <Container>
+                <Header/>
+                <h3>Você só pode registrar um atraso se estiver conectado à sua conta.</h3>
+                <Button onClick={getLocation}>Tentar Novamente</Button>
+            </Container>
+        )
+    }
+    
+
     return (
         <Container>
             <Header/>
-            <h3>{busLine.label}</h3>
-            <span>Você está em: </span>
-            <strong>{address}</strong>
-            <span>Informe em quantos minutos a linha está atrasada: </span>
-            <Input type="number"/>
-            <Button onClick={sendDelay}>Enviar atraso</Button>
+            {isLoggedIn ? (
+                <>
+                    <h3>{busLine.label}</h3>
+                    <span>Você está em: </span>
+                    <strong>{address}</strong>
+                    <span>Informe em quantos minutos a linha está atrasada: </span>
+                    <Input type="number"/>
+                    <Button onClick={sendDelay}>Enviar atraso</Button>
+                </>
+            ) : (
+                <>
+                    <h3>Você precisa estar conectado à sua conta para registrar um atraso.</h3>
+                    <Button onClick={tryAgain}>Tentar Novamente</Button>
+                </>
+            )}
+            
         </Container>
     )
 }
