@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react";
 import { busLines } from "../data/busLines";
 import { UserContext } from "../context/UserContext";
 import { mockedReports } from "../data/mockedReports";
-import { key } from "../environment/key";
 
 function ReportDelay() {
 
@@ -51,7 +50,7 @@ function ReportDelay() {
     }
 
     function requestToGoogleMapAPI(lat, long) {
-        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${process.env.REACT_APP_API_KEY}`
         fetch(url).then(response => response.json()).then(data => {
             const address = data.results[0].formatted_address
             setAddress(address)
