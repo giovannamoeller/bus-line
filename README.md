@@ -44,7 +44,7 @@ Quando o usuário reportar novos atrasos, será necessário a permissão da sua 
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="BusTracker" title="#BusTracker" src="./src/assets/web.svg" width="400px">
+  <img alt="BusTracker" title="#BusTracker" src="./src/assets/web.png" width="400px">
 </p>
 
 ## 🛠 Tecnologias
