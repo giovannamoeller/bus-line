@@ -3,21 +3,15 @@
 </h1>
 
 <h4 align="center"> 
-	🚧 Bus Tracker 1.0 🚀 em construção... 🚧
+	🚌 Bus Tracker 1.0 🚀 em construção... 🚧
 </h4>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/giovannamoeller/bus-line?color=%2304D361">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/giovannamoeller/bus-line">
-
-  	
-  <a href="https://www.twitter.com/giovannamoeller/">
-    <img alt="Siga no Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fgiovannamoeller%2Fbus-line">
-  </a>
-	
   
-  <a href="https://github.com/giovannamoeller/bus-line/commits/master">
+  <a href="https://github.com/giovannamoeller/bus-line/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/giovannamoeller/bus-line">
   </a>
 
