@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { Container } from "../components/Container";
 import { busLines } from "../data/busLines";
 import Error from "../components/Error";
-import { mockedReports } from "../data/reports";
+import { mockedReports } from "../data/mockedReports";
 
 function ViewDelay() {
     const { id } = useParams();

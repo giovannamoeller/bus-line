@@ -7,8 +7,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 function Home() {
-
-    const {setIsLoggedIn} = useContext(UserContext)
+    const {setIsLoggedIn, username, setUsername} = useContext(UserContext)
 
     function login() {
         setIsLoggedIn(true);
@@ -18,11 +17,17 @@ function Home() {
         setIsLoggedIn(false);
     }
 
+    function changeUsername(value) {
+        setUsername(value)
+    }
+
     const navigate = useNavigate();
 
     function goToSelectLinePage() {
-        login()
-        navigate('/busLine')
+        if (username) {
+            login()
+            navigate('/busLine')
+        }
     }
 
     function goToSelectLinePageWithoutLogin() {
@@ -34,7 +39,7 @@ function Home() {
         <Container>
             <Header/>
             <span className="header-description">Ajude a melhorar a estimativa de atraso dos ônibus na cidade de Bauru. </span>
-            <Input placeholder="Nome do Usuário"/>
+            <Input placeholder="Nome do Usuário" onKeyDown={(e) => changeUsername(e.target.value)}/>
             <Input placeholder="Senha" type="password"/>
             <Button onClick={goToSelectLinePage}>Entrar na minha conta</Button>
             <span>OU</span>

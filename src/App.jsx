@@ -10,9 +10,10 @@ import ViewDelay from "./pages/ViewDelay";
 function App() {
   
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
 
   return (
-      <UserContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
+      <UserContext.Provider value={{isLoggedIn, setIsLoggedIn, username, setUsername}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/busLine" element={<SelectBusLine />} />
