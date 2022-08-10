@@ -10,6 +10,7 @@ import { mockedReports } from "../data/mockedReports";
 
 function ReportDelay() {
 
+    const key = 'AIzaSyBAnlbVm4ao9vQiW8JLCCbKsNHmuzlFfMc'
     const navigate = useNavigate();
 
     const { isLoggedIn, username } = useContext(UserContext)
@@ -51,7 +52,7 @@ function ReportDelay() {
 
     function requestToGoogleMapAPI(lat, long) {
         console.log(lat, long)
-        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${process.env.REACT_APP_API_KEY}`
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`
         fetch(url).then(response => response.json()).then(data => {
             const address = data.results[0].formatted_address
             setAddress(address)
