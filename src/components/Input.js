@@ -13,9 +13,8 @@ export const Input = styled.input`
     margin: 1rem 0;
     font-weight: lighter;
     outline: none;
+    font-family: 'Poppins', sans-serif;
     &::placeholder {
-        font-weight: lighter;
-        font-family: 'Poppins', sans-serif;
         color: #757575;
     }
 `; 
