@@ -24,7 +24,7 @@
 
 ## 💻 Sobre o projeto
 
-♻️ BusTracker é um software feito para web com o objetivo de melhorar a produtividade dos usuários uma vez que reporta os atrasos dos ônibus da cidade de Bauru, São Paulo.
+🚌 BusTracker é um software feito para web com o objetivo de melhorar a produtividade dos usuários uma vez que reporta os atrasos dos ônibus da cidade de Bauru, São Paulo.
 
 A ideia é toda centrada no usuário, pois são os mesmos que reportam os atrasos. A ideia de comunidade é extremamente importante aqui.
 
