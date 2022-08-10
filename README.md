@@ -84,4 +84,4 @@ $ npm run start
 
 Este projeto esta sobe a licença MIT.
 
-Feito com ❤️ por Giovanna Moeller e Lucas Bertoni.
+Feito por Giovanna Moeller e Lucas Bertoni.
